@@ -1,0 +1,31 @@
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int l=0;
+        int r= nums.length-1;
+        int n = nums.length;
+        int[] res= new int[n];
+        int sq= 0;
+
+        //Iterating over the array in reverse order
+        for(int i=r; i>=0;i--)
+        {
+            if(Math.abs(nums[l]) < Math.abs(nums[r])){
+            sq= nums[r];
+            r--;
+            }
+            else{
+                sq=nums[l];
+                l++;
+            }
+        res[i]= sq*sq;
+        }
+        return res;   
+    }
+}
+
+
+
+     
+      
+           
+         
